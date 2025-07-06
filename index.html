@@ -7,81 +7,150 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            margin: 2em; 
+            margin: 0; 
             background: #f8f9fa; 
             color: #222;
         }
-        header {
-            margin-bottom: 2em;
+        nav {
+            background: #0074d9;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        h1 {
-            color: #0074d9;
+        nav .logo {
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        header {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 3em 2em 2em 2em;
+            text-align: center;
         }
         main {
-            background: #fff;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
         }
-        footer {
-            margin-top: 2em;
-            text-align: center;
-            color: #555;
-            font-size: 0.9em;
+        section {
+            background: #fff;
+            margin-bottom: 2em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2em;
+        }
+        h2 {
+            color: #0074d9;
+            margin-top: 0;
+        }
+        .contact-info a {
+            color: #0074d9;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1em;
+            }
+            main {
+                padding: 1em;
+            }
+            section {
+                padding: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Coding Portfolio</h1>
-        <p>Hi, I'm Nigel. Here you can find my course work and GitHub projects.<br>
-        嗨，我是 Nigel。這裡展示我的課程作業和 GitHub 專案。</p>
+    <nav>
+        <span class="logo">Nigel Lee</span>
+        <ul>
+            <li><a href="#home">Home / 首頁</a></li>
+            <li><a href="#projects">Projects / 專案</a></li>
+            <li><a href="#coursework">Coursework / 課程作業</a></li>
+            <li><a href="#contact">Contact / 聯絡</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <h1>Nigel Lee – Coding Portfolio</h1>
+        <p>
+            Aspiring software developer with a passion for building impactful solutions. Experienced in Python, JavaScript, and financial modeling. Seeking opportunities to contribute and grow in a dynamic tech environment.<br>
+            熱愛開發、具備 Python、JavaScript 及金融建模經驗的新進工程師，期望在科技產業中發揮所長、持續成長。
+        </p>
     </header>
     <main>
-        <section>
-            <h2>Course Work / 課程作業</h2>
+        <section id="projects">
+            <h2>Featured GitHub Projects / 精選 GitHub 專案</h2>
             <ul>
                 <li>
-                    <strong>Web Development 101</strong> – 
-                    <a href="https://github.com/9ninee/My_portfolio" target="_blank">Personal Blog</a>
-                    <br><span style="color:#555;">A simple blog website built with HTML, CSS, and JavaScript.<br>使用 HTML、CSS 和 JavaScript 製作的簡易部落格網站。</span>
-                </li>
-                <li>
-                    <strong>Data Structures</strong> – 
-                    <a href="https://github.com/9ninee/My_portfolio" target="_blank">Sorting Visualizer</a>
-                    <br><span style="color:#555;">A tool to visualize sorting algorithms.<br>排序演算法視覺化工具。</span>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>GitHub Projects / GitHub 專案</h2>
-            <ul>
-                <li>
-                    <a href="https://github.com/9ninee/My_portfolio" target="_blank">Project 1</a> – 
-                    <span style="color:#555;">A cool open-source project.<br>有趣的開源專案。</span>
-                </li>
-                <li>
-                    <a href="https://github.com/9ninee/My_portfolio" target="_blank">Project 2</a> – 
-                    <span style="color:#555;">Another awesome project.<br>另一個很棒的專案。</span>
-                </li>
-                <li>
-                    <a href="https://github.com/9ninee/Dynamic_Option_Hedging" target="_blank">Dynamic Option Hedging</a> – 
+                    <a href="https://github.com/9ninee/Dynamic_Option_Hedging" target="_blank">Dynamic Option Hedging</a> –
                     <span style="color:#555;">A project for dynamic option hedging strategies.<br>動態選擇權避險策略專案。</span>
                 </li>
                 <li>
-                    <a href="#" target="_blank">Account Bookkeeping (Coming Soon)</a> – 
-                    <span style="color:#555;">A project for account bookkeeping. (Link will be updated when available)<br>帳務記帳專案（連結稍後補上）。</span>
-                </li>
-                <li>
-                    <a href="https://github.com/9ninee/Octopus-agile-calendar-for-East-midland" target="_blank">Octopus Agile Calendar for East Midland</a> – 
-                    <span style="color:#555;">A Python tool to generate .ics calendar files from Octopus API for East Midland district, helping users manage energy costs. <br>用 Python 製作，根據 Octopus API 產生 East Midland 地區的 .ics 行事曆檔案，協助用戶管理能源費用。</span>
+                    <a href="https://github.com/9ninee/Octopus-agile-calendar-for-East-midland" target="_blank">Octopus Agile Calendar for East Midland</a> –
+                    <span style="color:#555;">A Python tool to generate .ics calendar files from Octopus API for East Midland district, helping users manage energy costs.<br>用 Python 製作，根據 Octopus API 產生 East Midland 地區的 .ics 行事曆檔案，協助用戶管理能源費用。</span>
                 </li>
             </ul>
         </section>
+        <section id="coursework">
+            <h2>University Coursework / 大學課程作業</h2>
+            <ul>
+                <li>
+                    <strong>Financial Data Analysis</strong> –
+                    <span style="color:#555;">Analyzed and visualized financial datasets using Python and Pandas.<br>使用 Python 與 Pandas 分析並視覺化金融數據。</span>
+                </li>
+                <li>
+                    <strong>Web Application Development</strong> –
+                    <span style="color:#555;">Developed a simple blog platform with Flask.<br>以 Flask 製作簡易部落格平台。</span>
+                </li>
+                <li>
+                    <strong>Algorithm Design</strong> –
+                    <span style="color:#555;">Implemented classic algorithms and data structures in Java.<br>以 Java 實作經典演算法與資料結構。</span>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact / 聯絡方式</h2>
+            <div class="contact-info">
+                Email: <a href="mailto:9ninee@users.noreply.github.com">9ninee@users.noreply.github.com</a> <br>
+                LinkedIn: <a href="https://www.linkedin.com/in/kinchiu-li/" target="_blank">linkedin.com/in/kinchiu-li</a>
+            </div>
+        </section>
     </main>
     <footer>
-        &copy; 2025 Nigel's Portfolio | 
-        <a href="https://github.com/9ninee" target="_blank">My GitHub</a>
+        &copy; 2025 Nigel Lee
     </footer>
 </body>
 </html>
