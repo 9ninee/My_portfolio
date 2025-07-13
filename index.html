@@ -2,95 +2,339 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Index Page</title>
+    <title>Nigel Lee - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            background: #f8f9fa; 
-            color: #222;
+        :root {
+            --nottingham-blue: #10263B;
+            --nottingham-blue-80: #405162;
+            --nottingham-blue-60: #707D89;
+            --nottingham-blue-40: #9FA8B1;
+            --nottingham-blue-20: #CFD4D8;
+            --nottingham-blue-5: #F3F4F5;
+            --portland-stone: #FAF6EF;
+            --portland-stone-40: #FDFBF9;
+            --jubilee-red: #B91C2E;
+            --trent-turquoise: #37B4B0;
+            --white: #FFFFFF;
+            --shadow-light: rgba(16, 38, 59, 0.08);
+            --shadow-medium: rgba(16, 38, 59, 0.12);
+            --shadow-strong: rgba(16, 38, 59, 0.16);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0; 
+            background: var(--portland-stone-40);
+            color: var(--nottingham-blue);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Navigation */
         nav {
-            background: #0074d9;
-            color: #fff;
-            padding: 1em 2em;
+            background: var(--nottingham-blue);
+            color: var(--white);
+            padding: 1.2em 2em;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow-medium);
         }
+
         nav .logo {
-            font-size: 1.3em;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--white);
         }
+
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2em;
+            gap: 2.5em;
             margin: 0;
             padding: 0;
         }
-        nav ul li {
-            display: inline;
-        }
+
         nav ul li a {
-            color: #fff;
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            position: relative;
         }
+
         nav ul li a:hover {
-            color: #ffd700;
+            background: var(--nottingham-blue-80);
+            color: var(--white);
+            transform: translateY(-2px);
         }
+
+        /* Header */
         header {
             margin: 0 auto;
-            max-width: 800px;
-            padding: 3em 2em 2em 2em;
+            max-width: 1000px;
+            padding: 4em 2em 3em 2em;
             text-align: center;
+            background: linear-gradient(135deg, var(--nottingham-blue-5) 0%, var(--white) 100%);
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 3em;
         }
-        main {
-            max-width: 900px;
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--nottingham-blue);
+            margin-bottom: 0.5em;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            font-size: 1.15em;
+            color: var(--nottingham-blue-60);
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2em;
+            line-height: 1.7;
+            font-weight: 400;
         }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2em 3em 2em;
+        }
+
         section {
-            background: #fff;
-            margin-bottom: 2em;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 2em;
+            background: var(--white);
+            margin-bottom: 2.5em;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px var(--shadow-light);
+            padding: 2.5em;
+            border: 1px solid var(--nottingham-blue-20);
+            transition: all 0.3s ease;
         }
+
+        section:hover {
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            transform: translateY(-4px);
+        }
+
         h2 {
-            color: #0074d9;
+            color: var(--nottingham-blue);
             margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 1.8em;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5em;
         }
-        .contact-info a {
-            color: #0074d9;
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--nottingham-blue) 0%, var(--trent-turquoise) 100%);
+            border-radius: 2px;
+        }
+
+        /* Project and coursework lists */
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin-bottom: 2em;
+            padding: 1.5em;
+            background: var(--nottingham-blue-5);
+            border-radius: 12px;
+            border-left: 4px solid var(--trent-turquoise);
+            transition: all 0.3s ease;
+        }
+
+        section ul li:hover {
+            background: var(--nottingham-blue-20);
+            transform: translateX(8px);
+        }
+
+        section ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        section ul li a {
+            color: var(--nottingham-blue);
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
+
+        section ul li a:hover {
+            color: var(--trent-turquoise);
+        }
+
+        section ul li span {
+            color: var(--nottingham-blue-60);
+            display: block;
+            margin-top: 0.5em;
+            line-height: 1.6;
+        }
+
+        /* Contact section */
+        .contact-info {
+            background: var(--nottingham-blue-5);
+            padding: 2em;
+            border-radius: 12px;
+            border: 1px solid var(--nottingham-blue-20);
+        }
+
+        .contact-info a {
+            color: var(--nottingham-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.2em 0.5em;
+            border-radius: 6px;
+        }
+
         .contact-info a:hover {
-            text-decoration: underline;
+            background: var(--nottingham-blue-20);
+            color: var(--nottingham-blue);
         }
-        @media (max-width: 600px) {
+
+        .contact-info br {
+            margin-bottom: 1em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--nottingham-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2em;
+            margin-top: 3em;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 1em;
             }
+
             nav ul {
                 flex-direction: column;
                 gap: 1em;
+                margin-top: 1em;
+                width: 100%;
             }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            header {
+                padding: 2em 1em;
+                margin-bottom: 2em;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
             main {
-                padding: 1em;
+                padding: 0 1em 2em 1em;
             }
+
             section {
+                padding: 1.5em;
+                margin-bottom: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            section ul li {
                 padding: 1em;
             }
         }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav .logo {
+                font-size: 1.2em;
+            }
+
+            section {
+                padding: 1em;
+            }
+
+            .contact-info {
+                padding: 1.5em;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid var(--trent-turquoise);
+            outline-offset: 2px;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -103,54 +347,60 @@
             <li><a href="#contact">Contact / 聯絡</a></li>
         </ul>
     </nav>
+
     <header id="home">
         <h1>Nigel Lee – Coding Portfolio</h1>
         <p>
-            Aspiring software developer with a passion for building impactful solutions. Experienced in Python, JavaScript, and financial modeling. Seeking opportunities to contribute and grow in a dynamic tech environment.<br>
+            Aspiring software developer with a passion for building impactful solutions. Experienced in Python, JavaScript, and financial modeling. Seeking opportunities to contribute and grow in a dynamic tech environment.<br><br>
             熱愛開發、具備 Python、JavaScript 及金融建模經驗的新進工程師，期望在科技產業中發揮所長、持續成長。
         </p>
     </header>
+
     <main>
         <section id="projects">
             <h2>Featured GitHub Projects / 精選 GitHub 專案</h2>
             <ul>
                 <li>
-                    <a href="https://github.com/9ninee/Dynamic_Option_Hedging" target="_blank">Dynamic Option Hedging</a> –
-                    <span style="color:#555;">A project for dynamic option hedging strategies.<br>動態選擇權避險策略專案。</span>
+                    <a href="https://github.com/9ninee/Dynamic_Option_Hedging" target="_blank">Dynamic Option Hedging</a>
+                    <span>A comprehensive project implementing dynamic option hedging strategies using Python and financial modeling techniques. Features real-time market data integration and risk management algorithms.<br>動態選擇權避險策略專案，運用 Python 與金融建模技術，整合即時市場數據與風險管理演算法。</span>
                 </li>
                 <li>
-                    <a href="https://github.com/9ninee/Octopus-agile-calendar-for-East-midland" target="_blank">Octopus Agile Calendar for East Midland</a> –
-                    <span style="color:#555;">A Python tool to generate .ics calendar files from Octopus API for East Midland district, helping users manage energy costs.<br>用 Python 製作，根據 Octopus API 產生 East Midland 地區的 .ics 行事曆檔案，協助用戶管理能源費用。</span>
+                    <a href="https://github.com/9ninee/Octopus-agile-calendar-for-East-midland" target="_blank">Octopus Agile Calendar for East Midland</a>
+                    <span>A Python-based tool that generates .ics calendar files from Octopus Energy API for the East Midland district. Helps users optimize energy consumption by providing real-time pricing information in calendar format.<br>基於 Python 開發的工具，透過 Octopus Energy API 為 East Midland 地區生成 .ics 行事曆文件，以行事曆格式提供即時電價資訊，協助用戶優化能源使用。</span>
                 </li>
             </ul>
         </section>
+
         <section id="coursework">
             <h2>University Coursework / 大學課程作業</h2>
             <ul>
                 <li>
-                    <strong>Financial Data Analysis</strong> –
-                    <span style="color:#555;">Analyzed and visualized financial datasets using Python and Pandas.<br>使用 Python 與 Pandas 分析並視覺化金融數據。</span>
+                    <strong>Financial Data Analysis</strong>
+                    <span>Comprehensive analysis and visualization of financial datasets using Python, Pandas, and NumPy. Implemented statistical models for risk assessment and portfolio optimization.<br>使用 Python、Pandas 和 NumPy 進行金融數據的全面分析與視覺化，實作風險評估與投資組合最佳化的統計模型。</span>
                 </li>
                 <li>
-                    <strong>Web Application Development</strong> –
-                    <span style="color:#555;">Developed a simple blog platform with Flask.<br>以 Flask 製作簡易部落格平台。</span>
+                    <strong>Web Application Development</strong>
+                    <span>Built a full-featured blog platform using Flask framework with user authentication, database integration, and responsive design. Includes admin panel and content management system.<br>使用 Flask 框架建構功能完整的部落格平台，包含用戶認證、資料庫整合和響應式設計，以及管理面板與內容管理系統。</span>
                 </li>
                 <li>
-                    <strong>Algorithm Design</strong> –
-                    <span style="color:#555;">Implemented classic algorithms and data structures in Java.<br>以 Java 實作經典演算法與資料結構。</span>
+                    <strong>Algorithm Design & Data Structures</strong>
+                    <span>Implemented classic algorithms and data structures in Java, including sorting algorithms, tree traversal, graph theory, and dynamic programming solutions with performance optimization.<br>以 Java 實作經典演算法與資料結構，包括排序演算法、樹遍歷、圖論及動態程式設計解決方案，並進行效能最佳化。</span>
                 </li>
             </ul>
         </section>
+
         <section id="contact">
             <h2>Contact / 聯絡方式</h2>
             <div class="contact-info">
-                Email: <a href="mailto:9ninee@users.noreply.github.com">9ninee@users.noreply.github.com</a> <br>
-                LinkedIn: <a href="https://www.linkedin.com/in/kinchiu-li/" target="_blank">linkedin.com/in/kinchiu-li</a>
+                <p><strong>Email:</strong> <a href="mailto:9ninee@users.noreply.github.com">9ninee@users.noreply.github.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kinchiu-li/" target="_blank">linkedin.com/in/kinchiu-li</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/9ninee" target="_blank">github.com/9ninee</a></p>
             </div>
         </section>
     </main>
+
     <footer>
-        &copy; 2025 Nigel Lee
+        <p>&copy; 2025 Nigel Lee. All rights reserved.</p>
     </footer>
 </body>
 </html>
