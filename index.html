@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Index Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background: #f8f9fa; 
+            color: #222;
+        }
+        nav {
+            background: #0074d9;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav .logo {
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .language-switcher {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .language-switcher:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .language-switcher:active {
+            transform: scale(0.95);
+        }
+        header {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 3em 2em 2em 2em;
+            text-align: center;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3em;
+        }
+        .sidebar {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2em;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+        section {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2em;
+        }
+        .profile-section {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .profile-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            border: 3px solid #0074d9;
+        }
+        .profile-section h3 {
+            color: #0074d9;
+            margin: 0.5em 0;
+        }
+        .skills-section h4 {
+            color: #0074d9;
+            margin-bottom: 0.5em;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li {
+            padding: 0.3em 0;
+            border-bottom: 1px solid #eee;
+        }
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+        .dissertation-content {
+            text-align: left;
+        }
+        .dissertation-content h3 {
+            color: #0074d9;
+            margin-bottom: 1em;
+            font-size: 1.4em;
+        }
+        .dissertation-description {
+            line-height: 1.6;
+            margin-bottom: 2em;
+            color: #555;
+        }
+        .dissertation-details {
+            background: #f8f9fa;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+        }
+        .detail-item {
+            margin-bottom: 0.8em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+        .detail-item strong {
+            color: #0074d9;
+            min-width: 80px;
+        }
+        .dissertation-actions {
+            text-align: center;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #0074d9;
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 116, 217, 0.3);
+        }
+        .download-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 116, 217, 0.4);
+        }
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        h2 {
+            color: #0074d9;
+            margin-top: 0;
+        }
+        .contact-info a {
+            color: #0074d9;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .lang-en {
+            display: block;
+        }
+        .lang-zh {
+            display: none;
+        }
+        .lang-zh.active {
+            display: block;
+        }
+        .lang-en.active {
+            display: block;
+        }
+        .lang-en:not(.active) {
+            display: none;
+        }
+        .lang-zh:not(.active) {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1em;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1em;
+            }
+            .language-switcher {
+                align-self: flex-end;
+            }
+            main {
+                padding: 1em;
+            }
+            section {
+                padding: 1em;
+            }
+        }
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+                gap: 2em;
+            }
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            .main-content {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">Nigel Lee</span>
+        <div class="nav-content">
+            <ul>
+                <li><a href="#home" data-en="Home" data-zh="首頁">Home / 首頁</a></li>
+                <li><a href="#dissertation" data-en="Dissertation" data-zh="畢業論文">Dissertation / 畢業論文</a></li>
+                <li><a href="#projects" data-en="Projects" data-zh="專案">Projects / 專案</a></li>
+                <li><a href="#coursework" data-en="Coursework" data-zh="課程作業">Coursework / 課程作業</a></li>
+                <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact / 聯絡</a></li>
+            </ul>
+            <button class="language-switcher" onclick="toggleLanguage()">
+                <span class="lang-en active">English</span>
+                <span class="lang-zh">中文</span>
+            </button>
+        </div>
+    </nav>
+    <header id="home">
+        <h1>
+            <span class="lang-en active">Nigel Lee – Coding Portfolio</span>
+            <span class="lang-zh">Nigel Lee – 程式設計作品集</span>
+        </h1>
+        <p>
+            <span class="lang-en active">
+                Aspiring software developer with a passion for building impactful solutions. Experienced in Python, JavaScript, and financial modeling. Seeking opportunities to contribute and grow in a dynamic tech environment.
+            </span>
+            <span class="lang-zh">
+                熱愛開發、具備 Python、JavaScript 及金融建模經驗的新進工程師，期望在科技產業中發揮所長、持續成長。
+            </span>
+        </p>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="profile-section">
+                <img src="https://via.placeholder.com/120" alt="Profile Picture">
+                <h3>Nigel Lee</h3>
+                <p>
+                    <span class="lang-en active">Aspiring Software Developer</span>
+                    <span class="lang-zh">新進軟體開發者</span>
+                </p>
+            </div>
+            <div class="skills-section">
+                <h4>
+                    <span class="lang-en active">Skills</span>
+                    <span class="lang-zh">技能</span>
+                </h4>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>
+                        <span class="lang-en active">Financial Modeling</span>
+                        <span class="lang-zh">金融建模</span>
+                    </li>
+                    <li>
+                        <span class="lang-en active">Web Development</span>
+                        <span class="lang-zh">網頁開發</span>
+                    </li>
+                    <li>
+                        <span class="lang-en active">Algorithm Design</span>
+                        <span class="lang-zh">演算法設計</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <section id="dissertation">
+                <h2>
+                    <span class="lang-en active">Dissertation</span>
+                    <span class="lang-zh">畢業論文</span>
+                </h2>
+                <div class="dissertation-content">
+                    <h3>
+                        <span class="lang-en active">Dynamic Option Hedging Strategy Via Reinforcement Learning</span>
+                        <span class="lang-zh">基於強化學習的動態選擇權避險策略</span>
+                    </h3>
+                    <p class="dissertation-description">
+                        <span class="lang-en active">
+                            My final year dissertation exploring the application of reinforcement learning algorithms 
+                            to develop dynamic option hedging strategies. This research combines financial theory with 
+                            machine learning techniques to create adaptive hedging approaches that can respond to 
+                            market changes in real-time.
+                        </span>
+                        <span class="lang-zh">
+                            我的畢業論文探討如何運用強化學習演算法來開發動態選擇權避險策略。這項研究結合金融理論與機器學習技術，
+                            創造出能夠即時回應市場變化的自適應避險方法。
+                        </span>
+                    </p>
+                    <div class="dissertation-details">
+                        <div class="detail-item">
+                            <strong>
+                                <span class="lang-en active">Course:</span>
+                                <span class="lang-zh">課程:</span>
+                            </strong>
+                            <span class="lang-en active">BUSI4622 - Financial Engineering</span>
+                            <span class="lang-zh">BUSI4622 - 金融工程</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>
+                                <span class="lang-en active">University:</span>
+                                <span class="lang-zh">大學:</span>
+                            </strong>
+                            <span class="lang-en active">University of Nottingham</span>
+                            <span class="lang-zh">諾丁漢大學</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>
+                                <span class="lang-en active">Year:</span>
+                                <span class="lang-zh">年份:</span>
+                            </strong>
+                            <span class="lang-en active">2024-2025</span>
+                            <span class="lang-zh">2024-2025</span>
+                        </div>
+                    </div>
+                    <div class="dissertation-actions">
+                        <a href="20717509_BUSI4622_20UNUK_2425.pdf" target="_blank" class="download-btn">
+                            <span class="lang-en active">📄 View Dissertation PDF</span>
+                            <span class="lang-zh">📄 查看論文 PDF</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <h2>
+                    <span class="lang-en active">Featured GitHub Projects</span>
+                    <span class="lang-zh">精選 GitHub 專案</span>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://github.com/9ninee/Dynamic_Option_Hedging" target="_blank">Dynamic Option Hedging</a> –
+                        <span class="lang-en active" style="color:#555;">
+                            A project for dynamic option hedging strategies.
+                        </span>
+                        <span class="lang-zh" style="color:#555;">
+                            動態選擇權避險策略專案。
+                        </span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/9ninee/Octopus-agile-calendar-for-East-midland" target="_blank">Octopus Agile Calendar for East Midland</a> –
+                        <span class="lang-en active" style="color:#555;">
+                            A Python tool to generate .ics calendar files from Octopus API for East Midland district, helping users manage energy costs.
+                        </span>
+                        <span class="lang-zh" style="color:#555;">
+                            用 Python 製作，根據 Octopus API 產生 East Midland 地區的 .ics 行事曆檔案，協助用戶管理能源費用。
+                        </span>
+                    </li>
+                </ul>
+            </section>
+            <section id="coursework">
+                <h2>
+                    <span class="lang-en active">University Coursework</span>
+                    <span class="lang-zh">大學課程作業</span>
+                </h2>
+                <ul>
+                    <li>
+                        <strong>Financial Data Analysis</strong> –
+                        <span class="lang-en active" style="color:#555;">
+                            Analyzed and visualized financial datasets using Python and Pandas.
+                        </span>
+                        <span class="lang-zh" style="color:#555;">
+                            使用 Python 與 Pandas 分析並視覺化金融數據。
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Web Application Development</strong> –
+                        <span class="lang-en active" style="color:#555;">
+                            Developed a simple blog platform with Flask.
+                        </span>
+                        <span class="lang-zh" style="color:#555;">
+                            以 Flask 製作簡易部落格平台。
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Algorithm Design</strong> –
+                        <span class="lang-en active" style="color:#555;">
+                            Implemented classic algorithms and data structures in Java.
+                        </span>
+                        <span class="lang-zh" style="color:#555;">
+                            以 Java 實作經典演算法與資料結構。
+                        </span>
+                    </li>
+                </ul>
+            </section>
+            <section id="contact">
+                <h2>
+                    <span class="lang-en active">Contact</span>
+                    <span class="lang-zh">聯絡方式</span>
+                </h2>
+                <div class="contact-info">
+                    <span class="lang-en active">Email:</span>
+                    <span class="lang-zh">電子郵件:</span>
+                    <a href="mailto:9ninee@users.noreply.github.com">9ninee@users.noreply.github.com</a> <br>
+                    <span class="lang-en active">LinkedIn:</span>
+                    <span class="lang-zh">LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/kinchiu-li/" target="_blank">linkedin.com/in/kinchiu-li</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Nigel Lee
+    </footer>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function toggleLanguage() {
+            const langEn = document.querySelectorAll('.lang-en');
+            const langZh = document.querySelectorAll('.lang-zh');
+            const switcherEn = document.querySelector('.language-switcher .lang-en');
+            const switcherZh = document.querySelector('.language-switcher .lang-zh');
+            
+            if (currentLanguage === 'en') {
+                // Switch to Chinese
+                currentLanguage = 'zh';
+                langEn.forEach(el => el.classList.remove('active'));
+                langZh.forEach(el => el.classList.add('active'));
+                switcherEn.classList.remove('active');
+                switcherZh.classList.add('active');
+                document.documentElement.lang = 'zh-TW';
+            } else {
+                // Switch to English
+                currentLanguage = 'en';
+                langEn.forEach(el => el.classList.add('active'));
+                langZh.forEach(el => el.classList.remove('active'));
+                switcherEn.classList.add('active');
+                switcherZh.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language state
+            document.documentElement.lang = 'en';
+        });
+    </script>
+</body>
+</html>
