@@ -91,26 +91,30 @@
             gap: 3em;
         }
         .sidebar {
-            background: #ffffff;
+            background: transparent;
             border-radius: 0;
             box-shadow: none;
             padding: 2em;
             height: fit-content;
             position: sticky;
             top: 100px;
-            border: 1px solid #e0e0e0;
+            border: none;
         }
         .main-content {
             display: flex;
             flex-direction: column;
-            gap: 2em;
+            gap: 0;
         }
         section {
-            background: #ffffff;
+            background: transparent;
             border-radius: 0;
             box-shadow: none;
-            padding: 2em;
-            border: 1px solid #e0e0e0;
+            padding: 2em 0;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        section:last-child {
+            border-bottom: none;
         }
         .profile-section {
             text-align: center;
@@ -148,7 +152,7 @@
         }
         .skills-list li {
             padding: 0.3em 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #e0e0e0;
         }
         .skills-list li:last-child {
             border-bottom: none;
@@ -168,11 +172,13 @@
             color: #666666;
         }
         .dissertation-details {
-            background: #f8f8f8;
-            padding: 1.5em;
+            background: transparent;
+            padding: 1.5em 0;
             border-radius: 0;
             margin-bottom: 2em;
-            border: 1px solid #e0e0e0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
         }
         .detail-item {
             margin-bottom: 0.8em;
@@ -215,7 +221,7 @@
         .experience-item {
             margin-bottom: 2em;
             padding-bottom: 1.5em;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #e0e0e0;
         }
         .experience-item:last-child {
             border-bottom: none;
