@@ -1,4 +1,4 @@
-# Nigel Lee - Portfolio Website
+# KINCHIU Nigel LI - Portfolio Website
 
 ## Overview
 This is my personal portfolio website showcasing my academic work, projects, and skills as an MSc Financial Technology student at University of Nottingham. The website is designed to be shared with recruiters and potential employers via a direct web link. I am graduating in December 2025 and seeking opportunities in software development and financial engineering.
