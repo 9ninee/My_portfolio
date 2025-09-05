@@ -1,7 +1,7 @@
 # Nigel Lee - Portfolio Website
 
 ## Overview
-This is my personal portfolio website showcasing my academic work, projects, and skills as a final year student at University of Nottingham. The website is designed to be shared with recruiters and potential employers via a direct web link. I am graduating in December 2025 and seeking opportunities in software development and financial engineering.
+This is my personal portfolio website showcasing my academic work, projects, and skills as an MSc Financial Technology student at University of Nottingham. The website is designed to be shared with recruiters and potential employers via a direct web link. I am graduating in December 2025 and seeking opportunities in software development and financial engineering.
 
 ## 🚨 Important Repository Rules
 
@@ -46,8 +46,8 @@ My_portfolio/
 - **Traditional Chinese**: For local opportunities
 
 ### Content Sections
-1. **Personal Information**: Skills, background, contact details (Final year student status)
-2. **Dissertation**: Dynamic Option Hedging Strategy Via Reinforcement Learning (Final year project)
+1. **Personal Information**: Skills, background, contact details (MSc Financial Technology student)
+2. **Dissertation**: Dynamic Option Hedging Strategy Via Reinforcement Learning (MSc dissertation)
 3. **Projects**: GitHub repositories and technical work
 4. **Coursework**: University projects and academic achievements
 5. **Contact**: Professional contact information
