@@ -327,11 +327,11 @@
         <span class="logo">KINCHIU Nigel LI</span>
         <div class="nav-content">
             <ul>
-                <li><a href="#home" data-en="Home" data-zh="首頁">Home / 首頁</a></li>
-                <li><a href="#dissertation" data-en="Dissertation" data-zh="畢業論文">Dissertation / 畢業論文</a></li>
-                <li><a href="#projects" data-en="Projects" data-zh="專案">Projects / 專案</a></li>
-                <li><a href="#experience" data-en="Experience" data-zh="工作經驗">Experience / 工作經驗</a></li>
-                <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact / 聯絡</a></li>
+                <li><a href="#home" data-en="Home" data-zh="首頁">Home</a></li>
+                <li><a href="#dissertation" data-en="Dissertation" data-zh="畢業論文">Dissertation</a></li>
+                <li><a href="#projects" data-en="Projects" data-zh="專案">Projects</a></li>
+                <li><a href="#experience" data-en="Experience" data-zh="工作經驗">Experience</a></li>
+                <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a></li>
             </ul>
             <button class="language-switcher" onclick="toggleLanguage()">
                 <span class="lang-en active">English</span>
@@ -567,6 +567,7 @@
             const langZh = document.querySelectorAll('.lang-zh');
             const switcherEn = document.querySelector('.language-switcher .lang-en');
             const switcherZh = document.querySelector('.language-switcher .lang-zh');
+            const navLinks = document.querySelectorAll('nav ul li a');
             
             if (currentLanguage === 'en') {
                 // Switch to Chinese
@@ -576,6 +577,11 @@
                 switcherEn.classList.remove('active');
                 switcherZh.classList.add('active');
                 document.documentElement.lang = 'zh-TW';
+                
+                // Update navigation text to Chinese
+                navLinks.forEach(link => {
+                    link.textContent = link.getAttribute('data-zh');
+                });
             } else {
                 // Switch to English
                 currentLanguage = 'en';
@@ -584,6 +590,11 @@
                 switcherEn.classList.add('active');
                 switcherZh.classList.remove('active');
                 document.documentElement.lang = 'en';
+                
+                // Update navigation text to English
+                navLinks.forEach(link => {
+                    link.textContent = link.getAttribute('data-en');
+                });
             }
         }
         
@@ -591,6 +602,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set initial language state
             document.documentElement.lang = 'en';
+            
+            // Initialize navigation text to English
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.textContent = link.getAttribute('data-en');
+            });
         });
     </script>
 </body>
