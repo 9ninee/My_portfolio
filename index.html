@@ -165,6 +165,25 @@
             margin-bottom: 1em;
             font-size: 1.4em;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
+        .title-download-link {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border: 1px solid #2c2c2c;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .title-download-link:hover {
+            background: #2c2c2c;
+            color: white;
         }
         .dissertation-description {
             line-height: 1.6;
@@ -177,8 +196,6 @@
             border-radius: 0;
             margin-bottom: 2em;
             border: none;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
         }
         .detail-item {
             margin-bottom: 0.8em;
@@ -193,30 +210,6 @@
             color: #2c2c2c;
             min-width: 80px;
             font-weight: 600;
-        }
-        .dissertation-actions {
-            text-align: center;
-        }
-        .download-btn {
-            display: inline-block;
-            background: #2c2c2c;
-            color: white;
-            padding: 1em 2em;
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: none;
-            border: 1px solid #2c2c2c;
-        }
-        .download-btn:hover {
-            background: #ffffff;
-            color: #2c2c2c;
-            transform: none;
-            box-shadow: none;
-        }
-        .download-btn:active {
-            transform: translateY(0);
         }
         .experience-item {
             margin-bottom: 2em;
@@ -251,6 +244,44 @@
             color: #2c2c2c;
             position: absolute;
             left: 0;
+        }
+        .education-item {
+            margin-bottom: 2em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .education-item h3 {
+            color: #2c2c2c;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .education-honours {
+            font-size: 0.9em;
+            color: #666666;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .education-institution {
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 0.5em;
+        }
+        .education-duration {
+            color: #666666;
+            margin-bottom: 1em;
+        }
+        .education-details p {
+            line-height: 1.6;
+            color: #666666;
         }
         h2 {
             color: #2c2c2c;
@@ -329,6 +360,7 @@
             <ul>
                 <li><a href="#home" data-en="Home" data-zh="首頁">Home</a></li>
                 <li><a href="#dissertation" data-en="Dissertation" data-zh="畢業論文">Dissertation</a></li>
+                <li><a href="#education" data-en="Education" data-zh="教育背景">Education</a></li>
                 <li><a href="#projects" data-en="Projects" data-zh="專案">Projects</a></li>
                 <li><a href="#experience" data-en="Experience" data-zh="工作經驗">Experience</a></li>
                 <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a></li>
@@ -380,10 +412,6 @@
                          <span class="lang-zh">金融建模</span>
                      </li>
                      <li>
-                         <span class="lang-en active">Machine Learning</span>
-                         <span class="lang-zh">機器學習</span>
-                     </li>
-                     <li>
                          <span class="lang-en active">Data Visualization</span>
                          <span class="lang-zh">數據視覺化</span>
                      </li>
@@ -404,8 +432,12 @@
                     <h3>
                         <span class="lang-en active">Dynamic Option Hedging Strategy Via Reinforcement Learning</span>
                         <span class="lang-zh">基於強化學習的動態選擇權避險策略</span>
+                        <a href="20717509_BUSI4622_20UNUK_2425.pdf" target="_blank" class="title-download-link">
+                            <span class="lang-en active">📄 Download</span>
+                            <span class="lang-zh">📄 下載</span>
+                        </a>
                     </h3>
-                                         <p class="dissertation-description">
+                    <p class="dissertation-description">
                          <span class="lang-en active">
                              My MSc dissertation focusing on strategies backtesting and dynamic hedging with machine learning algorithms. 
                              This research explores the application of advanced machine learning techniques to develop robust hedging strategies 
@@ -422,8 +454,8 @@
                                 <span class="lang-en active">Course:</span>
                                 <span class="lang-zh">課程:</span>
                             </strong>
-                                                         <span class="lang-en active">MSc Financial Technologies</span>
-                             <span class="lang-zh">金融科技碩士</span>
+                            <span class="lang-en active">MSc Financial Technologies</span>
+                            <span class="lang-zh">金融科技碩士</span>
                         </div>
                         <div class="detail-item">
                             <strong>
@@ -433,20 +465,86 @@
                             <span class="lang-en active">University of Nottingham</span>
                             <span class="lang-zh">諾丁漢大學</span>
                         </div>
-                                                 <div class="detail-item">
-                             <strong>
-                                 <span class="lang-en active">Year:</span>
-                                 <span class="lang-zh">年份:</span>
-                             </strong>
-                             <span class="lang-en active">2024-2025 (MSc Graduating December 2025)</span>
-                             <span class="lang-zh">2024-2025 (碩士2025年12月畢業)</span>
-                         </div>
+                        <div class="detail-item">
+                            <strong>
+                                <span class="lang-en active">Year:</span>
+                                <span class="lang-zh">年份:</span>
+                            </strong>
+                            <span class="lang-en active">2024-2025 (MSc Graduating December 2025)</span>
+                            <span class="lang-zh">2024-2025 (碩士2025年12月畢業)</span>
+                        </div>
                     </div>
-                    <div class="dissertation-actions">
-                        <a href="20717509_BUSI4622_20UNUK_2425.pdf" target="_blank" class="download-btn">
-                            <span class="lang-en active">📄 View Dissertation PDF</span>
-                            <span class="lang-zh">📄 查看論文 PDF</span>
-                        </a>
+                </div>
+            </section>
+            <section id="education">
+                <h2>
+                    <span class="lang-en active">Education</span>
+                    <span class="lang-zh">教育背景</span>
+                </h2>
+                <div class="education-item">
+                    <h3>
+                        <span>
+                            <span class="lang-en active">MSc Financial Technologies</span>
+                            <span class="lang-zh">金融科技碩士</span>
+                        </span>
+                        <span class="education-honours">
+                            <span class="lang-en active">Cumulative First Honour</span>
+                            <span class="lang-zh">累積一等榮譽</span>
+                        </span>
+                    </h3>
+                    <p class="education-institution">
+                        <span class="lang-en active">University of Nottingham</span>
+                        <span class="lang-zh">諾丁漢大學</span>
+                    </p>
+                    <p class="education-duration">
+                        <span class="lang-en active">Sep 2024 - Dec 2025</span>
+                        <span class="lang-zh">2024年9月 - 2025年12月</span>
+                    </p>
+                    <div class="education-details">
+                        <p>
+                            <span class="lang-en active">
+                                Advanced studies in financial technologies, machine learning applications in finance, 
+                                quantitative analysis, and algorithmic trading strategies. Specialized coursework in 
+                                reinforcement learning for financial modeling and dynamic hedging strategies.
+                            </span>
+                            <span class="lang-zh">
+                                金融科技進階研究，包括機器學習在金融中的應用、量化分析，以及演算法交易策略。
+                                專精於強化學習在金融建模和動態避險策略中的應用。
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <h3>
+                        <span>
+                            <span class="lang-en active">BA(Hon) Business Management and Accounting and Finance</span>
+                            <span class="lang-zh">商業管理與會計金融學士</span>
+                        </span>
+                        <span class="education-honours">
+                            <span class="lang-en active">First Class Honours</span>
+                            <span class="lang-zh">一等榮譽</span>
+                        </span>
+                    </h3>
+                    <p class="education-institution">
+                        <span class="lang-en active">Nottingham Trent University</span>
+                        <span class="lang-zh">諾丁漢特倫特大學</span>
+                    </p>
+                    <p class="education-duration">
+                        <span class="lang-en active">Sep 2021 - Sep 2024</span>
+                        <span class="lang-zh">2021年9月 - 2024年9月</span>
+                    </p>
+                    <div class="education-details">
+                        <p>
+                            <span class="lang-en active">
+                                Comprehensive study of business management principles, accounting practices, and financial analysis. 
+                                Developed strong analytical and problem-solving skills through coursework in financial reporting, 
+                                management accounting, corporate finance, and strategic business management.
+                            </span>
+                            <span class="lang-zh">
+                                全面學習商業管理原則、會計實務和財務分析。透過財務報告、管理會計、企業財務和策略商業管理課程，
+                                發展了強烈的分析和問題解決技能。
+                            </span>
+                        </p>
                     </div>
                 </div>
             </section>
