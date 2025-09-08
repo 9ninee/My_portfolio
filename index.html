@@ -254,10 +254,8 @@
         .experience-item {
             margin-bottom: 2em;
             padding-bottom: 1.5em;
-            border-bottom: 1px solid #e0e0e0;
         }
         .experience-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
         }
         .experience-item h3 {
@@ -288,10 +286,8 @@
         .education-item {
             margin-bottom: 2em;
             padding-bottom: 1.5em;
-            border-bottom: 1px solid #e0e0e0;
         }
         .education-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
         }
         .education-item h3 {
@@ -322,6 +318,46 @@
         .education-details p {
             line-height: 1.6;
             color: #666666;
+        }
+        .scroll-container {
+            display: flex;
+            gap: 2em;
+            overflow-x: auto;
+            padding: 1em 0;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* WebKit */
+        }
+        .scroll-container.scrolling {
+            scrollbar-width: thin;
+            scrollbar-color: #e0e0e0 transparent;
+        }
+        .scroll-container.scrolling::-webkit-scrollbar {
+            display: block;
+            height: 8px;
+        }
+        .scroll-container.scrolling::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scroll-container.scrolling::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+        .scroll-container.scrolling::-webkit-scrollbar-thumb:hover {
+            background: #d0d0d0;
+        }
+        .education-item, .experience-item {
+            min-width: 400px;
+            max-width: 500px;
+            flex-shrink: 0;
+            margin-bottom: 2em;
+            padding-bottom: 1.5em;
+        }
+        .education-item:last-child, .experience-item:last-child {
+            margin-bottom: 0;
         }
         h2 {
             color: #2c2c2c;
@@ -412,6 +448,14 @@
             }
             section {
                 padding: 1em 0;
+            }
+            .education-item, .experience-item {
+                min-width: 300px;
+                max-width: 350px;
+            }
+            .scroll-container {
+                gap: 1em;
+                padding: 0.5em 0;
             }
         }
         @media (max-width: 900px) {
@@ -530,32 +574,6 @@
                              能夠適應市場條件並透過系統性回測方法優化投資組合表現的強健避險策略。
                          </span>
                      </p>
-                    <div class="dissertation-details">
-                        <div class="detail-item">
-                            <strong>
-                                <span class="lang-en active">Course:</span>
-                                <span class="lang-zh">課程:</span>
-                            </strong>
-                            <span class="lang-en active">MSc Financial Technologies</span>
-                            <span class="lang-zh">金融科技碩士</span>
-                        </div>
-                        <div class="detail-item">
-                            <strong>
-                                <span class="lang-en active">University:</span>
-                                <span class="lang-zh">大學:</span>
-                            </strong>
-                            <span class="lang-en active">University of Nottingham</span>
-                            <span class="lang-zh">諾丁漢大學</span>
-                        </div>
-                        <div class="detail-item">
-                            <strong>
-                                <span class="lang-en active">Year:</span>
-                                <span class="lang-zh">年份:</span>
-                            </strong>
-                            <span class="lang-en active">2024-2025 (MSc Graduating December 2025)</span>
-                            <span class="lang-zh">2024-2025 (碩士2025年12月畢業)</span>
-                        </div>
-                    </div>
                 </div>
             </section>
             <section id="education">
@@ -563,70 +581,72 @@
                     <span class="lang-en active">Education</span>
                     <span class="lang-zh">教育背景</span>
                 </h2>
-                <div class="education-item">
-                    <h3>
-                        <span>
-                            <span class="lang-en active">MSc Financial Technologies</span>
-                            <span class="lang-zh">金融科技碩士</span>
-                        </span>
-                        <span class="education-honours">
-                            <span class="lang-en active">Cumulative First Honour</span>
-                            <span class="lang-zh">累積一等榮譽</span>
-                        </span>
-                    </h3>
-                    <p class="education-institution">
-                        <span class="lang-en active">University of Nottingham</span>
-                        <span class="lang-zh">諾丁漢大學</span>
-                    </p>
-                    <p class="education-duration">
-                        <span class="lang-en active">Sep 2024 - Dec 2025</span>
-                        <span class="lang-zh">2024年9月 - 2025年12月</span>
-                    </p>
-                    <div class="education-details">
-                        <p>
-                            <span class="lang-en active">
-                                Advanced studies in financial technologies, machine learning applications in finance, 
-                                quantitative analysis, and algorithmic trading strategies. Specialized coursework in 
-                                reinforcement learning for financial modeling and dynamic hedging strategies.
+                <div class="scroll-container">
+                    <div class="education-item">
+                        <h3>
+                            <span>
+                                <span class="lang-en active">MSc Financial Technologies</span>
+                                <span class="lang-zh">金融科技碩士</span>
                             </span>
-                            <span class="lang-zh">
-                                金融科技進階研究，包括機器學習在金融中的應用、量化分析，以及演算法交易策略。
-                                專精於強化學習在金融建模和動態避險策略中的應用。
+                            <span class="education-honours">
+                                <span class="lang-en active">Cumulative First Honour</span>
+                                <span class="lang-zh">累積一等榮譽</span>
                             </span>
+                        </h3>
+                        <p class="education-institution">
+                            <span class="lang-en active">University of Nottingham</span>
+                            <span class="lang-zh">諾丁漢大學</span>
                         </p>
+                        <p class="education-duration">
+                            <span class="lang-en active">Sep 2024 - Dec 2025</span>
+                            <span class="lang-zh">2024年9月 - 2025年12月</span>
+                        </p>
+                        <div class="education-details">
+                            <p>
+                                <span class="lang-en active">
+                                    Advanced studies in financial technologies, machine learning applications in finance, 
+                                    quantitative analysis, and algorithmic trading strategies. Specialized coursework in 
+                                    reinforcement learning for financial modeling and dynamic hedging strategies.
+                                </span>
+                                <span class="lang-zh">
+                                    金融科技進階研究，包括機器學習在金融中的應用、量化分析，以及演算法交易策略。
+                                    專精於強化學習在金融建模和動態避險策略中的應用。
+                                </span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="education-item">
-                    <h3>
-                        <span>
-                            <span class="lang-en active">BA(Hon) Business Management and Accounting and Finance</span>
-                            <span class="lang-zh">商業管理與會計金融學士</span>
-                        </span>
-                        <span class="education-honours">
-                            <span class="lang-en active">First Class Honours</span>
-                            <span class="lang-zh">一等榮譽</span>
-                        </span>
-                    </h3>
-                    <p class="education-institution">
-                        <span class="lang-en active">Nottingham Trent University</span>
-                        <span class="lang-zh">諾丁漢特倫特大學</span>
-                    </p>
-                    <p class="education-duration">
-                        <span class="lang-en active">Sep 2021 - Sep 2024</span>
-                        <span class="lang-zh">2021年9月 - 2024年9月</span>
-                    </p>
-                    <div class="education-details">
-                        <p>
-                            <span class="lang-en active">
-                                Comprehensive study of business management principles, accounting practices, and financial analysis. 
-                                Developed strong analytical and problem-solving skills through coursework in financial reporting, 
-                                management accounting, corporate finance, and strategic business management.
+                    <div class="education-item">
+                        <h3>
+                            <span>
+                                <span class="lang-en active">BA(Hon) Business Management and Accounting and Finance</span>
+                                <span class="lang-zh">商業管理與會計金融學士</span>
                             </span>
-                            <span class="lang-zh">
-                                全面學習商業管理原則、會計實務和財務分析。透過財務報告、管理會計、企業財務和策略商業管理課程，
-                                發展了強烈的分析和問題解決技能。
+                            <span class="education-honours">
+                                <span class="lang-en active">First Class Honours</span>
+                                <span class="lang-zh">一等榮譽</span>
                             </span>
+                        </h3>
+                        <p class="education-institution">
+                            <span class="lang-en active">Nottingham Trent University</span>
+                            <span class="lang-zh">諾丁漢特倫特大學</span>
                         </p>
+                        <p class="education-duration">
+                            <span class="lang-en active">Sep 2021 - Sep 2024</span>
+                            <span class="lang-zh">2021年9月 - 2024年9月</span>
+                        </p>
+                        <div class="education-details">
+                            <p>
+                                <span class="lang-en active">
+                                    Comprehensive study of business management principles, accounting practices, and financial analysis. 
+                                    Developed strong analytical and problem-solving skills through coursework in financial reporting, 
+                                    management accounting, corporate finance, and strategic business management.
+                                </span>
+                                <span class="lang-zh">
+                                    全面學習商業管理原則、會計實務和財務分析。透過財務報告、管理會計、企業財務和策略商業管理課程，
+                                    發展了強烈的分析和問題解決技能。
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -670,53 +690,55 @@
                     <span class="lang-en active">Professional Experience</span>
                     <span class="lang-zh">工作經驗</span>
                 </h2>
-                <div class="experience-item">
-                    <h3>
-                        <span class="lang-en active">Survey Assistant</span>
-                        <span class="lang-zh">調查助理</span>
-                    </h3>
-                    <p class="experience-company">
-                        <span class="lang-en active">Nottingham Trent University | Sep 2023 - Aug 2024</span>
-                        <span class="lang-zh">諾丁漢特倫特大學 | 2023年9月 - 2024年8月</span>
-                    </p>
-                    <ul class="experience-details">
-                        <li>
-                            <span class="lang-en active">Collected room utilization data across multiple university buildings to support space planning and resource allocation</span>
-                            <span class="lang-zh">收集多個大學建築的空間使用數據，支援空間規劃和資源配置</span>
-                        </li>
-                        <li>
-                            <span class="lang-en active">Recorded occupancy levels and activity types with high accuracy and attention to detail</span>
-                            <span class="lang-zh">以高準確度和細心記錄佔用率和活動類型</span>
-                        </li>
-                        <li>
-                            <span class="lang-en active">Worked independently across various locations while maintaining consistent data quality</span>
-                            <span class="lang-zh">在各個地點獨立工作，同時保持一致的數據品質</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>
-                        <span class="lang-en active">Cert Mentor</span>
-                        <span class="lang-zh">認證導師</span>
-                    </h3>
-                    <p class="experience-company">
-                        <span class="lang-en active">Nottingham Trent University | Sep 2022 - Aug 2023</span>
-                        <span class="lang-zh">諾丁漢特倫特大學 | 2022年9月 - 2023年8月</span>
-                    </p>
-                    <ul class="experience-details">
-                        <li>
-                            <span class="lang-en active">Provided proactive support to first-year students including financial and wellbeing guidance</span>
-                            <span class="lang-zh">為一年級學生提供主動支援，包括財務和福祉指導</span>
-                        </li>
-                        <li>
-                            <span class="lang-en active">Developed strong communication and interpersonal skills through regular mentoring</span>
-                            <span class="lang-zh">透過定期指導發展強烈的溝通和人際交往技能</span>
-                        </li>
-                        <li>
-                            <span class="lang-en active">Demonstrated teamwork and leadership in supporting a diverse student cohort</span>
-                            <span class="lang-zh">在支援多元化學生群體中展現團隊合作和領導能力</span>
-                        </li>
-                    </ul>
+                <div class="scroll-container">
+                    <div class="experience-item">
+                        <h3>
+                            <span class="lang-en active">Survey Assistant</span>
+                            <span class="lang-zh">調查助理</span>
+                        </h3>
+                        <p class="experience-company">
+                            <span class="lang-en active">Nottingham Trent University | Sep 2023 - Aug 2024</span>
+                            <span class="lang-zh">諾丁漢特倫特大學 | 2023年9月 - 2024年8月</span>
+                        </p>
+                        <ul class="experience-details">
+                            <li>
+                                <span class="lang-en active">Collected room utilization data across multiple university buildings to support space planning and resource allocation</span>
+                                <span class="lang-zh">收集多個大學建築的空間使用數據，支援空間規劃和資源配置</span>
+                            </li>
+                            <li>
+                                <span class="lang-en active">Recorded occupancy levels and activity types with high accuracy and attention to detail</span>
+                                <span class="lang-zh">以高準確度和細心記錄佔用率和活動類型</span>
+                            </li>
+                            <li>
+                                <span class="lang-en active">Worked independently across various locations while maintaining consistent data quality</span>
+                                <span class="lang-zh">在各個地點獨立工作，同時保持一致的數據品質</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>
+                            <span class="lang-en active">Cert Mentor</span>
+                            <span class="lang-zh">認證導師</span>
+                        </h3>
+                        <p class="experience-company">
+                            <span class="lang-en active">Nottingham Trent University | Sep 2022 - Aug 2023</span>
+                            <span class="lang-zh">諾丁漢特倫特大學 | 2022年9月 - 2023年8月</span>
+                        </p>
+                        <ul class="experience-details">
+                            <li>
+                                <span class="lang-en active">Provided proactive support to first-year students including financial and wellbeing guidance</span>
+                                <span class="lang-zh">為一年級學生提供主動支援，包括財務和福祉指導</span>
+                            </li>
+                            <li>
+                                <span class="lang-en active">Developed strong communication and interpersonal skills through regular mentoring</span>
+                                <span class="lang-zh">透過定期指導發展強烈的溝通和人際交往技能</span>
+                            </li>
+                            <li>
+                                <span class="lang-en active">Demonstrated teamwork and leadership in supporting a diverse student cohort</span>
+                                <span class="lang-zh">在支援多元化學生群體中展現團隊合作和領導能力</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <section id="contact">
@@ -814,9 +836,28 @@
             document.documentElement.lang = 'en';
             
             // Initialize navigation text to English
-            const navLinks = document.querySelectorAll('nav ul li a');
+            const navLinks = document.querySelectorAll('nav .nav-menu li a');
             navLinks.forEach(link => {
                 link.textContent = link.getAttribute('data-en');
+            });
+            
+            // Initialize scroll containers
+            const scrollContainers = document.querySelectorAll('.scroll-container');
+            scrollContainers.forEach(container => {
+                let scrollTimeout;
+                
+                container.addEventListener('scroll', function() {
+                    // Add scrolling class
+                    this.classList.add('scrolling');
+                    
+                    // Clear existing timeout
+                    clearTimeout(scrollTimeout);
+                    
+                    // Remove scrolling class after scroll ends
+                    scrollTimeout = setTimeout(() => {
+                        this.classList.remove('scrolling');
+                    }, 1000);
+                });
             });
         });
     </script>
