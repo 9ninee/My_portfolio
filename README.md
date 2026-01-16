@@ -22,6 +22,7 @@ This is my personal portfolio website showcasing my academic work, projects, and
 My_portfolio/
 ├── index.html          # Main portfolio page
 ├── 20717509_BUSI4622_20UNUK_2425.pdf  # Dissertation PDF
+├── profile-picture.jpeg # Profile picture
 ├── LICENSE             # Repository license
 ├── .gitignore          # Git ignore rules
 └── README.md           # This file
@@ -95,7 +96,7 @@ My_portfolio/
 3. Enable HTTPS enforcement
 
 ## 📧 Contact Information
-- **Email**: 9ninee@users.noreply.github.com
+- **Email**: nigel_lee1998@hotmail.com
 - **LinkedIn**: [linkedin.com/in/kinchiu-li](https://www.linkedin.com/in/kinchiu-li/)
 - **GitHub**: [github.com/9ninee](https://github.com/9ninee)
 
