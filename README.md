@@ -23,6 +23,7 @@ My_portfolio/
 ├── index.html          # Main portfolio page
 ├── 20717509_BUSI4622_20UNUK_2425.pdf  # Dissertation PDF
 ├── profile-picture.jpeg # Profile picture
+├── certificates/       # Professional certificates (PDF)
 ├── LICENSE             # Repository license
 ├── .gitignore          # Git ignore rules
 └── README.md           # This file
@@ -49,9 +50,11 @@ My_portfolio/
 ### Content Sections
 1. **Personal Information**: Skills, background, contact details (MSc Financial Technology student)
 2. **Dissertation**: Dynamic Option Hedging Strategy Via Reinforcement Learning (MSc dissertation)
-3. **Projects**: GitHub repositories and technical work
-4. **Coursework**: University projects and academic achievements
-5. **Contact**: Professional contact information
+3. **Education**: Academic background and achievements
+4. **Projects**: GitHub repositories and technical work
+5. **Experience**: Professional roles and responsibilities
+6. **Certificates**: Professional courses and job simulations across finance, technology, and business
+7. **Contact**: Professional contact information
 
 ### Technical Features
 - Responsive design for all devices

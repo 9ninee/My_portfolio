@@ -478,6 +478,87 @@
             font-size: 0.9em;
             border-top: 1px solid #e0e0e0;
         }
+        .cert-category {
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+        .cert-category:first-of-type {
+            margin-top: 0.5em;
+        }
+        .cert-category h3 {
+            color: #2c2c2c;
+            font-size: 1.05em;
+            font-weight: 600;
+            margin: 0 0 0.6em 0;
+            letter-spacing: 0.3px;
+        }
+        .cert-category-note {
+            color: #888;
+            font-size: 0.85em;
+            margin: 0 0 1em 0;
+        }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+        .cert-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1.1em 1.2em;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+        .cert-card:hover {
+            border-color: #c9c9c9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transform: translateY(-1px);
+        }
+        .cert-card-title {
+            color: #2c2c2c;
+            font-weight: 600;
+            font-size: 0.98em;
+            line-height: 1.35;
+            margin: 0 0 0.5em 0;
+        }
+        .cert-card-meta {
+            color: #666666;
+            font-size: 0.85em;
+            line-height: 1.45;
+            margin: 0 0 0.9em 0;
+        }
+        .cert-card-meta .cert-issuer {
+            font-style: italic;
+        }
+        .cert-card-meta .cert-date {
+            display: block;
+            margin-top: 0.15em;
+            color: #888;
+        }
+        .cert-card-link {
+            margin-top: auto;
+            color: #2c2c2c;
+            text-decoration: none;
+            font-size: 0.82em;
+            font-weight: 500;
+            padding: 0.35em 0.85em;
+            border: 1px solid #2c2c2c;
+            border-radius: 4px;
+            align-self: flex-start;
+            transition: all 0.25s ease;
+        }
+        .cert-card-link:hover {
+            background: #2c2c2c;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -495,6 +576,7 @@
                 <li><a href="#education" data-en="Education" data-zh="教育背景">Education</a></li>
                 <li><a href="#projects" data-en="Projects" data-zh="專案">Projects</a></li>
                 <li><a href="#experience" data-en="Experience" data-zh="工作經驗">Experience</a></li>
+                <li><a href="#certificates" data-en="Certificates" data-zh="證書">Certificates</a></li>
                 <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a></li>
             </ul>
             <button class="language-switcher" onclick="toggleLanguage()">
@@ -746,6 +828,268 @@
                                 <span class="lang-zh">在支援多元化學生群體中展現團隊合作和領導能力</span>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="certificates">
+                <h2>
+                    <span class="lang-en active">Certificates</span>
+                    <span class="lang-zh">證書</span>
+                </h2>
+                <p class="dissertation-description">
+                    <span class="lang-en active">
+                        A collection of professional courses and job simulations I have completed alongside my degree, covering finance and audit, technology and data, and business and leadership. Each card links directly to the issued certificate.
+                    </span>
+                    <span class="lang-zh">
+                        我在學位課程之外完成的專業課程與職涯模擬證書，涵蓋金融與審計、科技與數據，以及商業與領導力。每張卡片皆可直接開啟對應證書。
+                    </span>
+                </p>
+
+                <div class="cert-category">
+                    <h3>
+                        <span class="lang-en active">Finance, Audit & Accounting</span>
+                        <span class="lang-zh">金融、審計與會計</span>
+                    </h3>
+                    <div class="cert-grid">
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Investment Banking Job Simulation</span>
+                                <span class="lang-zh">投資銀行職涯模擬</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">Citi · Forage</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Mar 2026</span>
+                                    <span class="lang-zh">2026年3月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Citi_Investment_Banking_Job_Simulation_Forage_2026.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Forensic Accounting and Fraud Examination</span>
+                                <span class="lang-zh">法務會計與舞弊調查</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">West Virginia University · Coursera</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Jul 2023</span>
+                                    <span class="lang-zh">2023年7月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Forensic_Accounting_and_Fraud_Examination_WVU_2023.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">GST – When, Where, Who and How Much?</span>
+                                <span class="lang-zh">商品及服務稅 — 時、地、人與金額</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">PwC India · Coursera</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Sep 2023</span>
+                                    <span class="lang-zh">2023年9月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/GST_PwC_India_2023.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">The Future of Audit</span>
+                                <span class="lang-zh">審計的未來</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Jan 2022</span>
+                                    <span class="lang-zh">2022年1月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/The_Future_of_Audit_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Accounting Foundations: Internal Controls</span>
+                                <span class="lang-zh">會計基礎：內部控制</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Jan 2022</span>
+                                    <span class="lang-zh">2022年1月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Accounting_Foundations_Internal_Controls_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-category">
+                    <h3>
+                        <span class="lang-en active">Technology & Data</span>
+                        <span class="lang-zh">科技與數據</span>
+                    </h3>
+                    <div class="cert-grid">
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Learning Data Analytics 1: Foundations</span>
+                                <span class="lang-zh">數據分析基礎一</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Nov 2023</span>
+                                    <span class="lang-zh">2023年11月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Learning_Data_Analytics_1_Foundations_LinkedIn_Learning_2023.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Learning Python (2020)</span>
+                                <span class="lang-zh">Python 入門 (2020)</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Feb 2022</span>
+                                    <span class="lang-zh">2022年2月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Learning_Python_2020_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Python for Students</span>
+                                <span class="lang-zh">學生 Python 課程</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Feb 2022</span>
+                                    <span class="lang-zh">2022年2月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Python_for_Students_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-category">
+                    <h3>
+                        <span class="lang-en active">Business, Marketing & Leadership</span>
+                        <span class="lang-zh">商業、行銷與領導力</span>
+                    </h3>
+                    <div class="cert-grid">
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Project Management Job Simulation</span>
+                                <span class="lang-zh">專案管理職涯模擬</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">CBRE · Forage</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Mar 2026</span>
+                                    <span class="lang-zh">2026年3月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/CBRE_Project_Management_Job_Simulation_Forage_2026.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Creating a Business Plan</span>
+                                <span class="lang-zh">商業計畫撰寫</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Jan 2022</span>
+                                    <span class="lang-zh">2022年1月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Creating_a_Business_Plan_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Presentation Tips for Pitching to Investors</span>
+                                <span class="lang-zh">向投資人簡報的技巧</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Feb 2022</span>
+                                    <span class="lang-zh">2022年2月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Presentation_Tips_for_Pitching_to_Investors_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Content Marketing for Social Media</span>
+                                <span class="lang-zh">社群媒體內容行銷</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">LinkedIn Learning</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Feb 2022</span>
+                                    <span class="lang-zh">2022年2月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Content_Marketing_for_Social_Media_LinkedIn_Learning_2022.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
+                        <div class="cert-card">
+                            <p class="cert-card-title">
+                                <span class="lang-en active">Student Mentor – Certificate of Appreciation</span>
+                                <span class="lang-zh">學生導師 — 感謝狀</span>
+                            </p>
+                            <p class="cert-card-meta">
+                                <span class="cert-issuer">Nottingham Trent University</span>
+                                <span class="cert-date">
+                                    <span class="lang-en active">Nov 2023</span>
+                                    <span class="lang-zh">2023年11月</span>
+                                </span>
+                            </p>
+                            <a href="certificates/Student_Mentor_Certificate_of_Appreciation_NTU_2023.pdf" target="_blank" class="cert-card-link">
+                                <span class="lang-en active">View</span>
+                                <span class="lang-zh">查看</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
